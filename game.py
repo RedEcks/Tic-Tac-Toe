@@ -44,6 +44,12 @@ class TicTacToe:
         #check column
         col_ind = square%3
         column = [self.board[col_ind+i*3] for i in range(3)]
+        if all ([spot == letter for spot in column]):
+            return True
+        
+        #check diagonals
+        #but only if the square is an even number (0, 2, 4, 6, 8)
+        #these are the only moves possible to win a diagonal
 
 
 def play(game, x_player, o_player, print_game=True):
